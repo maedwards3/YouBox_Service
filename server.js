@@ -8,8 +8,10 @@ const app = express();
 connectDB();
 
 // initailize the middleware
+app.use(express.json({ extended: false }));
 
 // def Routes
+app.use('/api/users', require('./route/api/users'));
 
 const PORT = process.env.PORT || 5000;
 
